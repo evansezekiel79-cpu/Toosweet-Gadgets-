@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Toosweet Gadgets | Phones & Gadgets</title>
-
 <meta name="description" content="Toosweet Gadgets - Phones, accessories and smart gadgets in Lafia, Nasarawa.">
 
 <style>
@@ -26,6 +24,7 @@ body{
   line-height:1.6;
 }
 
+/* HEADER */
 header{
   position:sticky;
   top:0;
@@ -60,6 +59,27 @@ nav a{
   font-size:14px;
 }
 
+/* CART BUTTON */
+.cart-button{
+  background:#22c55e;
+  color:#06100a;
+  border:0;
+  padding:10px 15px;
+  border-radius:10px;
+  font-weight:800;
+  cursor:pointer;
+  margin-left:15px;
+}
+
+.cart-count{
+  background:#111827;
+  color:white;
+  padding:2px 7px;
+  border-radius:20px;
+  margin-left:4px;
+}
+
+/* HERO */
 .hero{
   background:linear-gradient(135deg,#07111f,#172033);
   color:white;
@@ -140,6 +160,7 @@ nav a{
   margin:5px auto;
 }
 
+/* SECTIONS */
 section{
   max-width:1150px;
   margin:auto;
@@ -160,6 +181,7 @@ section{
   color:#6b7280;
 }
 
+/* SEARCH */
 .search-box{
   max-width:650px;
   margin:0 auto 25px;
@@ -178,6 +200,7 @@ section{
   border-color:#22c55e;
 }
 
+/* CATEGORIES */
 .categories{
   display:flex;
   justify-content:center;
@@ -200,6 +223,7 @@ section{
   color:white;
 }
 
+/* PRODUCTS */
 .products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -253,17 +277,35 @@ section{
   margin-bottom:14px;
 }
 
-.order-btn{
+.order-btn,
+.add-cart-btn{
   display:block;
+  width:100%;
   text-align:center;
-  background:#22c55e;
-  color:#06100a;
-  text-decoration:none;
+  border:0;
   padding:11px;
   border-radius:9px;
   font-weight:700;
+  cursor:pointer;
+  margin-top:8px;
 }
 
+.order-btn{
+  background:#22c55e;
+  color:#06100a;
+  text-decoration:none;
+}
+
+.add-cart-btn{
+  background:#111827;
+  color:white;
+}
+
+.add-cart-btn:hover{
+  background:#374151;
+}
+
+/* FEATURES */
 .features{
   max-width:none;
   background:white;
@@ -289,6 +331,7 @@ section{
   margin-bottom:10px;
 }
 
+/* CONTACT */
 .contact{
   max-width:none;
   background:#111827;
@@ -306,6 +349,7 @@ section{
   margin:8px;
 }
 
+/* FOOTER */
 footer{
   background:#070b12;
   color:#9ca3af;
@@ -314,6 +358,7 @@ footer{
   font-size:14px;
 }
 
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   right:18px;
@@ -332,8 +377,162 @@ footer{
   z-index:2000;
 }
 
-@media(max-width:900px){
+/* CART OVERLAY */
+.cart-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:3000;
+  display:none;
+}
 
+.cart-overlay.show{
+  display:block;
+}
+
+/* CART PANEL */
+.cart-panel{
+  position:absolute;
+  right:0;
+  top:0;
+  height:100%;
+  width:min(430px,100%);
+  background:white;
+  padding:20px;
+  overflow-y:auto;
+  box-shadow:-5px 0 25px rgba(0,0,0,.2);
+}
+
+.cart-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #e5e7eb;
+  padding-bottom:15px;
+  margin-bottom:15px;
+}
+
+.cart-header h2{
+  font-size:24px;
+}
+
+.close-cart{
+  border:0;
+  background:#f3f4f6;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* CART ITEMS */
+.cart-item{
+  display:flex;
+  gap:12px;
+  padding:14px 0;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.cart-item-image{
+  width:70px;
+  height:70px;
+  border-radius:10px;
+  object-fit:cover;
+  background:#f3f4f6;
+}
+
+.cart-item-info{
+  flex:1;
+}
+
+.cart-item-info h3{
+  font-size:15px;
+  margin-bottom:3px;
+}
+
+.cart-item-info p{
+  font-size:13px;
+  color:#6b7280;
+}
+
+.quantity-controls{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:8px;
+}
+
+.quantity-controls button{
+  width:28px;
+  height:28px;
+  border:0;
+  border-radius:6px;
+  background:#e5e7eb;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.quantity{
+  min-width:20px;
+  text-align:center;
+  font-weight:bold;
+}
+
+.remove-btn{
+  border:0;
+  background:none;
+  color:#dc2626;
+  cursor:pointer;
+  font-size:12px;
+  margin-top:5px;
+}
+
+/* CART FOOTER */
+.cart-footer{
+  margin-top:20px;
+  border-top:1px solid #e5e7eb;
+  padding-top:20px;
+}
+
+.cart-footer p{
+  color:#6b7280;
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+.whatsapp-checkout{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:10px;
+  background:#25d366;
+  color:white;
+  font-weight:800;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.clear-cart{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:1px solid #dc2626;
+  border-radius:10px;
+  background:white;
+  color:#dc2626;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.empty-cart{
+  text-align:center;
+  padding:50px 15px;
+  color:#6b7280;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
   .products{
     grid-template-columns:repeat(2,1fr);
   }
@@ -347,6 +546,19 @@ footer{
 
   nav{
     display:none;
+  }
+
+  .nav{
+    padding:12px 15px;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  .cart-button{
+    margin-left:5px;
+    padding:9px 11px;
   }
 
   .hero{
@@ -370,6 +582,10 @@ footer{
     padding:13px;
   }
 
+  .product-info h3{
+    font-size:16px;
+  }
+
   .feature-grid{
     grid-template-columns:1fr;
   }
@@ -383,8 +599,8 @@ footer{
 
 <body>
 
+<!-- HEADER -->
 <header>
-
 <div class="nav">
 
 <div class="logo">
@@ -398,13 +614,18 @@ Toosweet <span>Gadgets</span>
 <a href="#contact">Contact</a>
 </nav>
 
-</div>
+<button class="cart-button" onclick="openCart()">
+🛒 Cart
+<span class="cart-count" id="cartCount">0</span>
+</button>
 
+</div>
 </header>
 
 
 <main>
 
+<!-- HERO -->
 <section class="hero" id="home">
 
 <div class="hero-content">
@@ -436,7 +657,6 @@ WhatsApp Us
 
 </div>
 
-
 <div class="hero-card">
 
 <img
@@ -456,6 +676,7 @@ Phones • Accessories • Audio • Smart Devices
 </section>
 
 
+<!-- PRODUCTS -->
 <section id="products">
 
 <div class="section-title">
@@ -513,8 +734,7 @@ Smart Gadgets
 <div class="products" id="productGrid">
 
 
-<!-- iPhone -->
-
+<!-- IPHONE -->
 <article class="product" data-category="phones">
 
 <div class="product-image">
@@ -531,7 +751,14 @@ alt="iPhone">
 
 <p>Various models available.</p>
 
-<div class="price">Price: Contact us</div>
+<div class="price">
+Price: Contact us
+</div>
+
+<button class="add-cart-btn"
+onclick="addToCart('iPhone','https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=700&q=80')">
+🛒 Add to Cart
+</button>
 
 <a class="order-btn"
 href="https://wa.me/2348129720470?text=Hello%20Toosweet%20Gadgets%2C%20I%27m%20interested%20in%20an%20iPhone.%20Please%20send%20me%20the%20current%20price.">
@@ -539,12 +766,10 @@ Get Current Price
 </a>
 
 </div>
-
 </article>
 
 
-<!-- Samsung -->
-
+<!-- SAMSUNG -->
 <article class="product" data-category="phones">
 
 <div class="product-image">
@@ -561,7 +786,14 @@ alt="Samsung smartphone">
 
 <p>Popular Samsung smartphones.</p>
 
-<div class="price">Price: Contact us</div>
+<div class="price">
+Price: Contact us
+</div>
+
+<button class="add-cart-btn"
+onclick="addToCart('Samsung Galaxy','https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=700&q=80')">
+🛒 Add to Cart
+</button>
 
 <a class="order-btn"
 href="https://wa.me/2348129720470?text=Hello%20Toosweet%20Gadgets%2C%20I%27m%20interested%20in%20a%20Samsung%20phone.%20Please%20send%20me%20the%20current%20price.">
@@ -569,12 +801,10 @@ Get Current Price
 </a>
 
 </div>
-
 </article>
 
 
-<!-- Android -->
-
+<!-- ANDROID -->
 <article class="product" data-category="phones">
 
 <div class="product-image">
@@ -591,7 +821,14 @@ alt="Android smartphone">
 
 <p>Different Android brands and models.</p>
 
-<div class="price">Price: Contact us</div>
+<div class="price">
+Price: Contact us
+</div>
+
+<button class="add-cart-btn"
+onclick="addToCart('Android Phone','https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=700&q=80')">
+🛒 Add to Cart
+</button>
 
 <a class="order-btn"
 href="https://wa.me/2348129720470?text=Hello%20Toosweet%20Gadgets%2C%20I%27m%20interested%20in%20an%20Android%20phone.%20Please%20send%20me%20the%20current%20price.">
@@ -599,12 +836,10 @@ Get Current Price
 </a>
 
 </div>
-
 </article>
 
 
-<!-- Earbuds -->
-
+<!-- EARBUDS -->
 <article class="product" data-category="audio">
 
 <div class="product-image">
@@ -621,7 +856,14 @@ alt="Wireless earbuds">
 
 <p>Portable wireless audio devices.</p>
 
-<div class="price">Price: Contact us</div>
+<div class="price">
+Price: Contact us
+</div>
+
+<button class="add-cart-btn"
+onclick="addToCart('Wireless Earbuds','https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=700&q=80')">
+🛒 Add to Cart
+</button>
 
 <a class="order-btn"
 href="https://wa.me/2348129720470?text=Hello%20Toosweet%20Gadgets%2C%20I%27m%20interested%20in%20wireless%20earbuds.%20Please%20send%20me%20the%20current%20price.">
@@ -629,12 +871,10 @@ Get Current Price
 </a>
 
 </div>
-
 </article>
 
 
-<!-- Chargers -->
-
+<!-- CHARGER -->
 <article class="product" data-category="accessories">
 
 <div class="product-image">
@@ -651,7 +891,14 @@ alt="Phone charger">
 
 <p>Phone chargers and charging accessories.</p>
 
-<div class="price">Price: Contact us</div>
+<div class="price">
+Price: Contact us
+</div>
+
+<button class="add-cart-btn"
+onclick="addToCart('Fast Charger','https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=700&q=80')">
+🛒 Add to Cart
+</button>
 
 <a class="order-btn"
 href="https://wa.me/2348129720470?text=Hello%20Toosweet%20Gadgets%2C%20I%27m%20interested%20in%20a%20charger.%20Please%20send%20me%20the%20current%20price.">
@@ -659,12 +906,10 @@ Get Current Price
 </a>
 
 </div>
-
 </article>
 
 
-<!-- Power Banks -->
-
+<!-- POWER BANK -->
 <article class="product" data-category="accessories">
 
 <div class="product-image">
@@ -672,6 +917,7 @@ Get Current Price
 <img
 src="https://m.media-amazon.com/images/I/51g9+siaAgL._AC_SL1500_.jpg"
 alt="Power bank">
+
 </div>
 
 <div class="product-info">
@@ -680,7 +926,14 @@ alt="Power bank">
 
 <p>Portable power for your devices.</p>
 
-<div class="price">Price: Contact us</div>
+<div class="price">
+Price: Contact us
+</div>
+
+<button class="add-cart-btn"
+onclick="addToCart('Power Bank','https://m.media-amazon.com/images/I/51g9+siaAgL._AC_SL1500_.jpg')">
+🛒 Add to Cart
+</button>
 
 <a class="order-btn"
 href="https://wa.me/2348129720470?text=Hello%20Toosweet%20Gadgets%2C%20I%27m%20interested%20in%20a%20power%20bank.%20Please%20send%20me%20the%20current%20price.">
@@ -688,12 +941,10 @@ Get Current Price
 </a>
 
 </div>
-
 </article>
 
 
-<!-- Smart Watches -->
-
+<!-- SMART WATCH -->
 <article class="product" data-category="smart">
 
 <div class="product-image">
@@ -710,7 +961,14 @@ alt="Smart watch">
 
 <p>Smart watches and wearable devices.</p>
 
-<div class="price">Price: Contact us</div>
+<div class="price">
+Price: Contact us
+</div>
+
+<button class="add-cart-btn"
+onclick="addToCart('Smart Watch','https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&w=700&q=80')">
+🛒 Add to Cart
+</button>
 
 <a class="order-btn"
 href="https://wa.me/2348129720470?text=Hello%20Toosweet%20Gadgets%2C%20I%27m%20interested%20in%20a%20smart%20watch.%20Please%20send%20me%20the%20current%20price.">
@@ -718,12 +976,10 @@ Get Current Price
 </a>
 
 </div>
-
 </article>
 
 
-<!-- Phone Cases -->
-
+<!-- PHONE CASE -->
 <article class="product" data-category="accessories">
 
 <div class="product-image">
@@ -731,6 +987,7 @@ Get Current Price
 <img
 src="https://cdn.prod.website-files.com/621b7efdcf819768ca29963b/664f609f61f0bd4fcc68e39f_WHITE%20BACKGROUND%20PRODUCT%20AMAZON%20MAIN%20IMAGE%20PHOTOGRAPHY00015.jpg"
 alt="Phone case">
+
 </div>
 
 <div class="product-info">
@@ -739,7 +996,14 @@ alt="Phone case">
 
 <p>Protective cases and phone accessories.</p>
 
-<div class="price">Price: Contact us</div>
+<div class="price">
+Price: Contact us
+</div>
+
+<button class="add-cart-btn"
+onclick="addToCart('Phone Case','https://cdn.prod.website-files.com/621b7efdcf819768ca29963b/664f609f61f0bd4fcc68e39f_WHITE%20BACKGROUND%20PRODUCT%20AMAZON%20MAIN%20IMAGE%20PHOTOGRAPHY00015.jpg')">
+🛒 Add to Cart
+</button>
 
 <a class="order-btn"
 href="https://wa.me/2348129720470?text=Hello%20Toosweet%20Gadgets%2C%20I%27m%20interested%20in%20a%20phone%20case.%20Please%20send%20me%20the%20current%20price.">
@@ -747,15 +1011,13 @@ Get Current Price
 </a>
 
 </div>
-
 </article>
 
-
 </div>
-
 </section>
 
 
+<!-- FEATURES -->
 <section class="features" id="about">
 
 <div class="section-title">
@@ -767,7 +1029,6 @@ We're here to make getting your next gadget simple.
 </p>
 
 </div>
-
 
 <div class="feature-grid">
 
@@ -791,7 +1052,7 @@ Explore phones and useful tech accessories.
 <h3>Easy Ordering</h3>
 
 <p>
-Contact us directly through WhatsApp to make enquiries.
+Add products to your cart and send your order through WhatsApp.
 </p>
 
 </div>
@@ -814,13 +1075,12 @@ Serving customers around Lafia and beyond.
 </section>
 
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
 
 <div class="contact-inner">
 
-<h2>
-Ready to Get Your Gadget?
-</h2>
+<h2>Ready to Get Your Gadget?</h2>
 
 <p>
 Contact Toosweet Gadgets today for current prices and availability.
@@ -844,83 +1104,173 @@ Chat on WhatsApp
 </main>
 
 
+<!-- FOOTER -->
 <footer>
-
 © 2026 Toosweet Gadgets. All rights reserved.
-
 </footer>
 
 
-<a class="whatsapp"
+<!-- WHATSAPP FLOATING BUTTON -->
+<a
+class="whatsapp"
 href="https://wa.me/2348129720470?text=Hello%20Toosweet%20Gadgets%2C%20I%27d%20like%20to%20make%20an%20enquiry."
 aria-label="Chat with Toosweet Gadgets on WhatsApp">
-
 💬
-
 </a>
+
+
+<!-- CART -->
+<div class="cart-overlay" id="cartOverlay">
+
+<div class="cart-panel">
+
+<div class="cart-header">
+
+<h2>🛒 Your Cart</h2>
+
+<button class="close-cart" onclick="closeCart()">
+×
+</button>
+
+</div>
+
+
+<div id="cartItems">
+</div>
+
+
+<div class="cart-footer">
+
+<p>
+Prices are confirmed through WhatsApp because gadget prices may change.
+</p>
+
+<button
+class="whatsapp-checkout"
+onclick="checkoutWhatsApp()">
+📲 Send Order on WhatsApp
+</button>
+
+<button
+class="clear-cart"
+onclick="clearCart()">
+Clear Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 
 <script>
 
-function filterProducts(){
+/* =========================
+   CART SYSTEM
+========================= */
 
-const search =
-document.getElementById("search")
-.value
-.toLowerCase();
+let cart = JSON.parse(localStorage.getItem("toosweetCart")) || [];
 
-const products =
-document.querySelectorAll(".product");
 
-products.forEach(product=>{
+/* ADD PRODUCT */
 
-const text =
-product.innerText.toLowerCase();
+function addToCart(name, image){
 
-product.style.display =
-text.includes(search)
-? ""
-: "none";
+  const existingProduct = cart.find(item => item.name === name);
 
-});
+  if(existingProduct){
+
+    existingProduct.quantity += 1;
+
+  }else{
+
+    cart.push({
+      name:name,
+      image:image,
+      quantity:1
+    });
+
+  }
+
+  saveCart();
+
+  updateCart();
+
+  openCart();
+}
+
+
+/* SAVE CART */
+
+function saveCart(){
+
+  localStorage.setItem(
+    "toosweetCart",
+    JSON.stringify(cart)
+  );
 
 }
 
 
-function filterCategory(category,button){
+/* UPDATE CART */
 
-document
-.querySelectorAll(".category")
-.forEach(btn=>{
-btn.classList.remove("active");
-});
+function updateCart(){
 
-button.classList.add("active");
+  const cartCount =
+    document.getElementById("cartCount");
 
-document.getElementById("search").value="";
+  const cartItems =
+    document.getElementById("cartItems");
 
-document
-.querySelectorAll(".product")
-.forEach(product=>{
 
-if(
-category==="all" ||
-product.dataset.category===category
-){
+  /* TOTAL QUANTITY */
 
-product.style.display="";
+  let totalQuantity = 0;
 
-}else{
+  cart.forEach(item => {
 
-product.style.display="none";
+    totalQuantity += item.quantity;
 
-}
+  });
 
-});
 
-}
+  cartCount.textContent = totalQuantity;
 
-</script>
 
-</body>
-  </html>
+  /* EMPTY CART */
+
+  if(cart.length === 0){
+
+    cartItems.innerHTML = `
+      <div class="empty-cart">
+        <div style="font-size:50px;">🛒</div>
+        <h3>Your cart is empty</h3>
+        <p>Add some gadgets to your cart.</p>
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  /* CART PRODUCTS */
+
+  cartItems.innerHTML = cart.map((item,index) => `
+
+    <div class="cart-item">
+
+      <img
+        class="cart-item-image"
+        src="${item.image}"
+        alt="${item.name}"
+      >
+
+      <div class="cart-item-info">
+
+        <h3>${item.name}</h3>
+
+        <p>Price: Contact us</p>
+
+        <div
