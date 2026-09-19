@@ -1195,6 +1195,29 @@
 </style>
 
 <div class="toosweet-gallery">
+  <style>
+  #toosweet-gallery {
+    width: min(92vw, 500px);
+    margin: 15px auto 25px;
+    padding: 6px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    background: #f2f2f2;
+    border-radius: 14px;
+    box-sizing: border-box;
+  }
+
+  #toosweet-gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+  }
+</style>
+
+<div id="toosweet-gallery">
   <img src="IMG-20260919-WA0017.jpg" alt="Toosweet Gadgets" loading="lazy">
   <img src="IMG-20260919-WA0018.jpg" alt="Toosweet Gadgets" loading="lazy">
   <img src="IMG-20260919-WA0019.jpg" alt="Toosweet Gadgets" loading="lazy">
@@ -1208,3 +1231,25 @@
   <img src="IMG-20260919-WA0034.jpg" alt="Toosweet Gadgets" loading="lazy">
   <img src="IMG-20260919-WA0035.jpg" alt="Toosweet Gadgets" loading="lazy">
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const gallery = document.getElementById("toosweet-gallery");
+
+  const elements = document.querySelectorAll(
+    "h1, h2, h3, h4, h5, h6, .product, .product-card, .product-item, article, section, div"
+  );
+
+  for (const element of elements) {
+    if (
+      element !== gallery &&
+      element.textContent &&
+      /iPhone/i.test(element.textContent)
+    ) {
+      element.parentNode.insertBefore(gallery, element);
+      break;
+    }
+  }
+});
+</script>
+  
