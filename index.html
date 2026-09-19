@@ -1253,29 +1253,67 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
   
-<!-- TOOSWEET GADGETS DELIVERY INFO -->
+<!-- TOOSWEET GADGETS DELIVERY & CONTACT -->
 <style>
-  .delivery-info {
+  .delivery-section {
+    margin: 35px 15px 20px;
+    padding: 28px 18px;
     text-align: center;
-    padding: 25px 15px;
-    margin-top: 30px;
-    background: #f5f5f5;
-    border-radius: 14px;
+    background: linear-gradient(135deg, #111, #2b2b2b);
+    color: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
   }
 
-  .delivery-info h3 {
+  .delivery-section h2 {
     margin: 0 0 10px;
-    font-size: 20px;
+    font-size: 24px;
   }
 
-  .delivery-info p {
-    margin: 6px 0;
+  .delivery-section p {
+    margin: 8px 0;
     font-size: 16px;
+  }
+
+  .delivery-phone {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 15px 0;
+  }
+
+  .whatsapp-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 22px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .whatsapp-button:hover {
+    opacity: 0.9;
   }
 </style>
 
-<div class="delivery-info">
-  <h3>Toosweet Gadgets</h3>
+<div class="delivery-section">
+  <h2>Toosweet Gadgets</h2>
+
   <p>🚚 We deliver nationwide</p>
+
   <p>📍 Branches in Kaduna and Lafia</p>
+
+  <p class="delivery-phone">
+    📞 +234 812 972 0470
+  </p>
+
+  <a
+    class="whatsapp-button"
+    href="https://wa.me/2348129720470"
+    target="_blank"
+  >
+    💬 Chat with us on WhatsApp
+  </a>
 </div>
